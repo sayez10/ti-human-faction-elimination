@@ -1,0 +1,113 @@
+[
+	{
+		"dataName": "event_EBOF_BloodInTheWater_1",
+      "friendlyName": "First EBOF influence penalty",
+		"displayName": "Rising Faction Skepticism",
+      "requiresAliens": false,
+      "logPublicity": "global",
+      "alertPublicity": "factions",
+      "repeatable": "OncePerCampaign",
+      "numOptions": 1,
+      "forceEvent": true,
+      "reqEventUnlock": false,
+      "targetType": "global",
+      "hitAllQualifyingTargets": true,
+      "firstTargetNotificationOnly": false,
+      "global_cooldown_months": 0,
+      "target_cooldown_months": 0,
+      "targetConditions": [
+         {
+            "$type": "TIGlobalCondition_fCampaignDuration_years",
+            "sign": "GreaterThan",
+            "strValue": "15"
+         }
+      ],
+      "eventOptions": [
+         {
+            "baseAIPreference": 1,
+            "outcomes": [
+               {
+                  "weight": 1,
+                  "effectTemplateNames": [
+                     "Effect_EBOF_InfluencePenalty1"
+                  ]
+               }
+            ]
+         }
+      ]
+	},
+	{
+		"dataName": "event_EBOF_BloodInTheWater_2",
+      "friendlyName": "Second EBOF influence penalty",
+		"displayName": "Looming Political Constraints",
+      "requiresAliens": false,
+      "logPublicity": "global",
+      "alertPublicity": "factions",
+      "repeatable": "OncePerCampaign",
+      "numOptions": 1,
+      "forceEvent": true,
+      "reqEventUnlock": false,
+      "targetType": "global",
+      "hitAllQualifyingTargets": true,
+      "firstTargetNotificationOnly": false,
+      "global_cooldown_months": 0,
+      "target_cooldown_months": 0,
+      "targetConditions": [
+         {
+            "$type": "TIGlobalCondition_fCampaignDuration_years",
+            "sign": "GreaterThan",
+            "strValue": "30"
+         }
+      ],
+      "eventOptions": [
+         {
+            "baseAIPreference": 1,
+            "outcomes": [
+               {
+                  "weight": 1,
+                  "effectTemplateNames": [
+                     "Effect_EBOF_InfluencePenalty1"
+                  ]
+               }
+            ]
+         }
+      ]
+	},
+	{
+		"dataName": "event_EBOF_BloodInTheWater_3",
+      "friendlyName": "Third EBOF influence penalty",
+		"displayName": "Blood in the Water",
+      "requiresAliens": false,
+      "logPublicity": "global",
+      "alertPublicity": "factions",
+      "repeatable": "OncePerCampaign",
+      "numOptions": 1,
+      "forceEvent": true,
+      "reqEventUnlock": false,
+      "targetType": "global",
+      "hitAllQualifyingTargets": true,
+      "firstTargetNotificationOnly": false,
+      "global_cooldown_months": 0,
+      "target_cooldown_months": 0,
+      "targetConditions": [
+         {
+            "$type": "TIGlobalCondition_fCampaignDuration_years",
+            "sign": "GreaterThan",
+            "strValue": "50"
+         }
+      ],
+      "eventOptions": [
+         {
+            "baseAIPreference": 1,
+            "outcomes": [
+               {
+                  "weight": 1,
+                  "effectTemplateNames": [
+                     "Effect_EBOF_InfluencePenalty1"
+                  ]
+               }
+            ]
+         }
+      ]
+	}
+]
