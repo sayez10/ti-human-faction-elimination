@@ -1,7 +1,7 @@
 [
 	{
-		"dataName": "event_EBOF_BloodInTheWater_1",
-		"friendlyName": "First EBOF influence penalty",
+		"dataName": "event_BloodInTheWater_1",
+		"friendlyName": "First influence penalty",
 		"displayName": "Rising Faction Skepticism",
 		"requiresAliens": false,
 		"logPublicity": "global",
@@ -47,8 +47,8 @@
 		]
 	},
 	{
-		"dataName": "event_EBOF_BloodInTheWater_2",
-		"friendlyName": "Second EBOF influence penalty",
+		"dataName": "event_BloodInTheWater_2",
+		"friendlyName": "Second influence penalty",
 		"displayName": "Looming Political Constraints",
 		"requiresAliens": false,
 		"logPublicity": "global",
@@ -94,8 +94,8 @@
 		]
 	},
 	{
-		"dataName": "event_EBOF_BloodInTheWater_3",
-		"friendlyName": "Third EBOF influence penalty",
+		"dataName": "event_BloodInTheWater_3",
+		"friendlyName": "Third influence penalty",
 		"displayName": "Blood in the Water",
 		"requiresAliens": false,
 		"logPublicity": "global",
