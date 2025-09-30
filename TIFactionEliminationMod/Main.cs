@@ -63,7 +63,7 @@ namespace TIFactionEliminationMod
 
         public class Settings : ModSettings, IDrawable
         {
-            [Draw("Maximum storable influence: (default: 5000.0, set 0 to disable)", Min = 0, Precision = 0)] public float influenceCap = 5000f;
+            [Draw("Maximum storable influence: (default: 0, set 0 to disable)", Min = 0, Precision = 0)] public float influenceCap = 0f;
 
             public override void Save(ModEntry modEntry)
             {
