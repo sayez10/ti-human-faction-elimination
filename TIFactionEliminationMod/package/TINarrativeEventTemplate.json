@@ -6,11 +6,11 @@
 		"requiresAliens": false,
 		"logPublicity": "global",
 		"alertPublicity": "factions",
-		"repeatable": "OncePerCampaign",
+		"repeatable": "OncePerFaction",
 		"numOptions": 1,
 		"forceEvent": true,
 		"reqEventUnlock": false,
-		"targetType": "global",
+		"targetType": "faction",
 		"hitAllQualifyingTargets": true,
 		"firstTargetNotificationOnly": false,
 		"global_cooldown_months": 0,
@@ -20,6 +20,16 @@
 				"$type": "TIGlobalCondition_fCampaignDuration_years",
 				"sign": "GreaterThan",
 				"strValue": "15"
+			},
+			{
+				"$type": "TIFactionCondition_bHumanFaction",
+				"sign": "EqualTo",
+				"strValue": "TRUE"
+			},
+			{
+				"$type": "TIFactionCondition_bAIControlled",
+				"sign": "EqualTo",
+				"strValue": "TRUE"
 			}
 		],
 		"eventOptions": [
@@ -43,11 +53,11 @@
 		"requiresAliens": false,
 		"logPublicity": "global",
 		"alertPublicity": "factions",
-		"repeatable": "OncePerCampaign",
+		"repeatable": "OncePerFaction",
 		"numOptions": 1,
 		"forceEvent": true,
 		"reqEventUnlock": false,
-		"targetType": "global",
+		"targetType": "faction",
 		"hitAllQualifyingTargets": true,
 		"firstTargetNotificationOnly": false,
 		"global_cooldown_months": 0,
@@ -57,6 +67,16 @@
 				"$type": "TIGlobalCondition_fCampaignDuration_years",
 				"sign": "GreaterThan",
 				"strValue": "30"
+			},
+			{
+				"$type": "TIFactionCondition_bHumanFaction",
+				"sign": "EqualTo",
+				"strValue": "TRUE"
+			},
+			{
+				"$type": "TIFactionCondition_bAIControlled",
+				"sign": "EqualTo",
+				"strValue": "TRUE"
 			}
 		],
 		"eventOptions": [
@@ -80,11 +100,11 @@
 		"requiresAliens": false,
 		"logPublicity": "global",
 		"alertPublicity": "factions",
-		"repeatable": "OncePerCampaign",
+		"repeatable": "OncePerFaction",
 		"numOptions": 1,
 		"forceEvent": true,
 		"reqEventUnlock": false,
-		"targetType": "global",
+		"targetType": "faction",
 		"hitAllQualifyingTargets": true,
 		"firstTargetNotificationOnly": false,
 		"global_cooldown_months": 0,
@@ -94,6 +114,16 @@
 				"$type": "TIGlobalCondition_fCampaignDuration_years",
 				"sign": "GreaterThan",
 				"strValue": "50"
+			},
+			{
+				"$type": "TIFactionCondition_bHumanFaction",
+				"sign": "EqualTo",
+				"strValue": "TRUE"
+			},
+			{
+				"$type": "TIFactionCondition_bAIControlled",
+				"sign": "EqualTo",
+				"strValue": "TRUE"
 			}
 		],
 		"eventOptions": [
