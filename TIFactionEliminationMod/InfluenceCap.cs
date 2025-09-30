@@ -1,4 +1,8 @@
-﻿using System;
+﻿// SPDX-FileCopyrightText: Copyright © 2025 explodoboy, sayez10
+//
+// SPDX-License-Identifier: MIT
+
+using System;
 using HarmonyLib;
 using PavonisInteractive.TerraInvicta;
 
