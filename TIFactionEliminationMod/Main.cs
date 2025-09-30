@@ -57,12 +57,12 @@ namespace TIFactionEliminationMod
             settings.Save(modEntry);
         }
 
-        public class Settings : UnityModManager.ModSettings, IDrawable
+        public class Settings : ModSettings, IDrawable
         {
             [Draw("Maximum storable influence: (default: 5000.0, set 0 to disable)", Min = 0, Precision = 0)] public float influenceCap = 5000f;
             [Draw("Minimum influence per month to undo faction death: (default: 100.0, set 0 to disable)", Min = 0, Precision = 0)] public float monthlyInfluenceToClearMark = 100f;
 
-            public override void Save(UnityModManager.ModEntry modEntry)
+            public override void Save(ModEntry modEntry)
             {
                 Save(this, modEntry);
             }
