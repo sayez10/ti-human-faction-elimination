@@ -1,24 +1,8 @@
 [
 	{
-		"dataName": "Effect_EBOF_InfluencePenalty1",
+		"dataName": "Effect_Faction_DecreaseMonthlyInfluenceIncome80",
 		"instantEffect": "GainInfluenceIncome",
-		"value": -31,
-		"effectTarget": "SourceFaction",
-		"effectDuration": "instant",
-		"duration_months": -1
-	},
-	{
-		"dataName": "Effect_EBOF_InfluencePenalty2",
-		"instantEffect": "GainInfluenceIncome",
-		"value": -62,
-		"effectTarget": "SourceFaction",
-		"effectDuration": "instant",
-		"duration_months": -1
-	},
-	{
-		"dataName": "Effect_EBOF_InfluencePenalty3",
-		"instantEffect": "GainInfluenceIncome",
-		"value": -62,
+		"value": -80,
 		"effectTarget": "SourceFaction",
 		"effectDuration": "instant",
 		"duration_months": -1
