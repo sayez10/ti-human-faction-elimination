@@ -14,7 +14,7 @@ namespace TIFactionEliminationMod
     internal static class MarkFactionAsDead
     {
         // Vanilla game has 10 built-in (including 'none') factions, plus an extra 8 for modders
-        private static readonly bool[] _markedForDeath = new bool[18];
+        private static readonly bool[] _markedAsDead = new bool[18];
 
         [HarmonyPostfix]
         private static void AddToCurrentResourcePostfix(TIFactionState __instance)
@@ -34,17 +34,17 @@ namespace TIFactionEliminationMod
             int thisFaction = (int)factionIdeologyTemplate.ideology;
             var monthlyIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
 
-            if (_markedForDeath[thisFaction])
+            if (_markedAsDead[thisFaction])
             {
                 __instance.resources[FactionResource.Influence] = 0;
-                return; // No need to waste time on re-checking _markedForDeath below, or setting the cap.
+                return; // No need to waste time on re-checking _markedAsDead below, or setting the cap.
             }
 
             // If the faction has no councilors, and have zero influence with an active defecit, they are marked for death.
             // First checks if the faction is already marked. If so, checking again is totally unnecessary.
-            if (!_markedForDeath[thisFaction] && __instance.resources[FactionResource.Influence] <= 0 && __instance.numActiveCouncilors == 0 && monthlyIncome < 0)
+            if (!_markedAsDead[thisFaction] && __instance.resources[FactionResource.Influence] <= 0 && __instance.numActiveCouncilors == 0 && monthlyIncome < 0)
             {
-                _markedForDeath[thisFaction] = true;
+                _markedAsDead[thisFaction] = true;
                 __instance.resources[FactionResource.Influence] = 0;
 
                 return; // No need to proceed to enforcing the cap. Influence is definitely under the cap, now.
@@ -62,9 +62,9 @@ namespace TIFactionEliminationMod
         // When called, every mark is cleared. This is to prevent marks carrying over between completely different saves.
         internal static void Reset()
         {
-            for (int i = 0; i < _markedForDeath.Length; i++)
+            for (int i = 0; i < _markedAsDead.Length; i++)
             {
-                _markedForDeath[i] = false;
+                _markedAsDead[i] = false;
             }
         }
     }
