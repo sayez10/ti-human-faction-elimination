@@ -17,7 +17,7 @@ namespace TIFactionEliminationMod
         private static bool[] markedForDeath = new bool[18]; //base game has 10 built-in (including 'none') factions, plus an extra 8 for modders
 
         [HarmonyPostfix]
-        public static void LimitInfluence(TIFactionState __instance)
+        private static void LimitInfluence(TIFactionState __instance)
         {
             // This function jumps in AFTER a resource has been added to a faction's coffers.
             // It makes sure a faction that has been cleared of both influence and councilors can never come back, without working for it.
@@ -64,7 +64,7 @@ namespace TIFactionEliminationMod
         }
 
         // When called, every mark is cleared. This is to prevent marks carrying over between completely different saves.
-        public static void Reset()
+        internal static void Reset()
         {
             for (int i = 0; i < markedForDeath.Length; i++)
             {
@@ -79,7 +79,7 @@ namespace TIFactionEliminationMod
     internal static class RefreshInfluenceCap
     {
         [HarmonyPostfix]
-        public static void TriggerRefresh()
+        private static void TriggerRefresh()
         {
             // If mod has been disabled, abort reset
             if (!Main.enabled) { return; }
