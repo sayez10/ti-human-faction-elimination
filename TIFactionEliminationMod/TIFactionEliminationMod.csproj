@@ -91,5 +91,14 @@
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="package\ModInfo.json" />
+    <None Include="package\TIEffectTemplate.json" />
+    <None Include="package\TINarrativeEventTemplate.json" />
+    <None Include="package\TIEffectTemplate.en" />
+    <None Include="package\TINarrativeEventTemplate.en" />
+    <None Include="package\FactionEliminationMod.pdn" />
+    <None Include="package\FactionEliminationMod.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
