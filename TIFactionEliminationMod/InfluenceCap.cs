@@ -26,8 +26,12 @@ namespace TIFactionEliminationMod
             // If mod has been disabled, abort patch.
             if (!Main.enabled) { return; }
 
+            // Game might not be fully initialized yet when the patched vanilla method is called the first time
+            var factionIdeologyTemplate = __instance.ideology;
+            if (factionIdeologyTemplate == null) { return; }
+
             // If the faction has been marked, then their influence is locked to 0 at all times, no matter what.
-            int thisFaction = (int)__instance.ideology.ideology;
+            int thisFaction = (int)factionIdeologyTemplate.ideology;
             var monthlyIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
             if (markedForDeath[thisFaction])
             {
