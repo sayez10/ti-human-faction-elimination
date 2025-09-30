@@ -11,7 +11,7 @@ using UnityModManagerNet;
 
 namespace TIFactionEliminationMod
 {
-    [HarmonyPatch(typeof(TIFactionState), "AddToCurrentResource")]
+    [HarmonyPatch(typeof(TIFactionState), nameof(TIFactionState.AddToCurrentResource))]
     public static class InfluenceCap
     {
         private static bool[] markedForDeath = new bool[18]; //base game has 10 built-in (including 'none') factions, plus an extra 8 for modders
@@ -75,7 +75,7 @@ namespace TIFactionEliminationMod
 
     // This latches onto (what I think is) the last function in charge of loading a save. All I know for sure, is that it runs only once during a game load.
     // Basically, when a save is loaded for the first time in a session, it's populated with 'false' values.
-    [HarmonyPatch(typeof(GameControl), "CompleteInit")]
+    [HarmonyPatch(typeof(GameControl), nameof(GameControl.CompleteInit))]
     public static class RefreshInfluenceCap
     {
         [HarmonyPostfix]
