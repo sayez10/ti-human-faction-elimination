@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBOF", "TIFactionEliminationMod\TIFactionEliminationMod.csproj", "{44220737-E9E2-435B-A840-49FA339324C7}"
+Project("{4563A1C6-7E27-4C89-9183-3F851C782A9D}") = "TIFactionEliminationMod", "TIFactionEliminationMod\TIFactionEliminationMod.csproj", "{91B7A999-8E9D-416F-949F-73AE3484F56B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEA1415D-A208-439F-9A0B-EE07CA3A9B3A}"
+Project("{18A70B69-3EF8-4B3D-8F14-66A920536FFD}") = "Solution Items", "Solution Items", "{3D092073-881A-496E-9A81-ECAC334BC1D5}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
@@ -18,15 +18,15 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44220737-E9E2-435B-A840-49FA339324C7}.Debug|x64.ActiveCfg = Debug|x64
-		{44220737-E9E2-435B-A840-49FA339324C7}.Debug|x64.Build.0 = Debug|x64
-		{44220737-E9E2-435B-A840-49FA339324C7}.Release|x64.ActiveCfg = Release|x64
-		{44220737-E9E2-435B-A840-49FA339324C7}.Release|x64.Build.0 = Release|x64
+		{91B7A999-8E9D-416F-949F-73AE3484F56B}.Debug|x64.ActiveCfg = Debug|x64
+		{91B7A999-8E9D-416F-949F-73AE3484F56B}.Debug|x64.Build.0 = Debug|x64
+		{91B7A999-8E9D-416F-949F-73AE3484F56B}.Release|x64.ActiveCfg = Release|x64
+		{91B7A999-8E9D-416F-949F-73AE3484F56B}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {623420DC-C223-462E-84FA-D97C52E2BCD3}
+		SolutionGuid = {0B3149AF-8B00-4BB1-8039-AEB5C22688EB}
 	EndGlobalSection
 EndGlobal
