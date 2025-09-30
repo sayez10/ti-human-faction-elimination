@@ -8,7 +8,7 @@
 	"Version": "0.0.0.1",
 	"ManagerVersion": "0.32.4",
 	"GameVersion": "0.4.101",
-	"AssemblyName": "EBOF.dll",
+	"AssemblyName": "TIFactionEliminationMod.dll",
 	"EntryMethod": "EBOF.Main.Load",
 	"mod url": "https://steamcommunity.com/sharedfiles/filedetails/?id=xxxxxxxxxx",
 	"Website": "https://www.nexusmods.com/terrainvicta/mods/xxxxxxxxxx",
