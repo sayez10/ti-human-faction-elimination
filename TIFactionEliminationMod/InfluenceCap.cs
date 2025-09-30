@@ -32,7 +32,7 @@ namespace TIFactionEliminationMod
 
             // If the faction has been marked, then their influence is locked to 0 at all times, no matter what.
             int thisFaction = (int)factionIdeologyTemplate.ideology;
-            var monthlyIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
+            float monthlyIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
 
             if (_markedAsDead[thisFaction])
             {
