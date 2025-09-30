@@ -4,7 +4,7 @@ using HarmonyLib;
 using UnityModManagerNet;
 using static UnityModManagerNet.UnityModManager;
 
-namespace EBOF
+namespace TIFactionEliminationMod
 {
     /// <summary>
     /// Controls loading and managing the mod

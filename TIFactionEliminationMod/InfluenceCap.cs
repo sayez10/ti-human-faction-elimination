@@ -9,7 +9,7 @@ using UnityEngine;
 
 using UnityModManagerNet;
 
-namespace EBOF
+namespace TIFactionEliminationMod
 {
     [HarmonyPatch(typeof(TIFactionState), "AddToCurrentResource")]
     public static class InfluenceCap

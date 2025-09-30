@@ -9,7 +9,7 @@
 	"ManagerVersion": "0.32.4",
 	"GameVersion": "0.4.101",
 	"AssemblyName": "TIFactionEliminationMod.dll",
-	"EntryMethod": "EBOF.Main.Load",
+	"EntryMethod": "TIFactionEliminationMod.Main.Load",
 	"mod url": "https://steamcommunity.com/sharedfiles/filedetails/?id=xxxxxxxxxx",
 	"Website": "https://www.nexusmods.com/terrainvicta/mods/xxxxxxxxxx",
 	"CreatorContact": "https://github.com/sayez10/ti-human-faction-elimination"
