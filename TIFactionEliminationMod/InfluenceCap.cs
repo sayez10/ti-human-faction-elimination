@@ -11,7 +11,7 @@ using PavonisInteractive.TerraInvicta;
 namespace TIFactionEliminationMod
 {
     [HarmonyPatch(typeof(TIFactionState), nameof(TIFactionState.AddToCurrentResource))]
-    internal static class InfluenceCap
+    internal static class MarkFactionAsDead
     {
         // Vanilla game has 10 built-in (including 'none') factions, plus an extra 8 for modders
         private static readonly bool[] _markedForDeath = new bool[18];
@@ -72,7 +72,7 @@ namespace TIFactionEliminationMod
     // This latches onto (what I think is) the last function in charge of loading a save. All I know for sure, is that it runs only once during a game load.
     // Basically, when a save is loaded for the first time in a session, it's populated with 'false' values.
     [HarmonyPatch(typeof(GameControl), nameof(GameControl.CompleteInit))]
-    internal static class RefreshInfluenceCap
+    internal static class ResetFactionsStatus
     {
         [HarmonyPostfix]
         private static void CompleteInitPostfix()
@@ -80,7 +80,7 @@ namespace TIFactionEliminationMod
             // If mod has been disabled, abort reset
             if (!Main.enabled) { return; }
 
-            InfluenceCap.Reset();
+            MarkFactionAsDead.Reset();
         }
     }
 }
