@@ -17,7 +17,7 @@ namespace TIFactionEliminationMod
         private static readonly bool[] _markedForDeath = new bool[18];
 
         [HarmonyPostfix]
-        private static void LimitInfluence(TIFactionState __instance)
+        private static void AddToCurrentResourcePostfix(TIFactionState __instance)
         {
             // This function jumps in AFTER a resource has been added to a faction's coffers.
             // It makes sure a faction that has been cleared of both influence and councilors can never come back.
@@ -75,7 +75,7 @@ namespace TIFactionEliminationMod
     internal static class RefreshInfluenceCap
     {
         [HarmonyPostfix]
-        private static void TriggerRefresh()
+        private static void CompleteInitPostfix()
         {
             // If mod has been disabled, abort reset
             if (!Main.enabled) { return; }
