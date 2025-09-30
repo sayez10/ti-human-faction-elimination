@@ -16,7 +16,7 @@ namespace TIFactionEliminationMod
         private static void LimitInfluence(TIFactionState __instance)
         {
             // This function jumps in AFTER a resource has been added to a faction's coffers.
-            // It makes sure a faction that has been cleared of both influence and councilors can never come back, without working for it.
+            // It makes sure a faction that has been cleared of both influence and councilors can never come back.
             // It also enforces a cap to influence storage so killing off a faction doesn't take literally forever.
 
             // If mod has been disabled, abort patch.
@@ -29,13 +29,9 @@ namespace TIFactionEliminationMod
             // If the faction has been marked, then their influence is locked to 0 at all times, no matter what.
             int thisFaction = (int)factionIdeologyTemplate.ideology;
             var monthlyIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
+
             if (_markedForDeath[thisFaction])
             {
-                // If a faction manages to generate 100 influence a month, their mark is cleared, and the faction can start storing influence again.
-                // This represents sufficient traction, whether on earth or in space, causing the recreation of a previously-defunct faction.
-                // Also, if monthlyInfluenceToClearMark is zero, the check is skipped; factions remain dead.
-                if (Main.settings.monthlyInfluenceToClearMark != 0 && monthlyIncome > Main.settings.monthlyInfluenceToClearMark) { _markedForDeath[thisFaction] = false; return; }
-
                 __instance.resources[FactionResource.Influence] = 0;
                 return; // No need to waste time on re-checking _markedForDeath below, or setting the cap.
             }
