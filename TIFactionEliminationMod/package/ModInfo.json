@@ -1,12 +1,12 @@
 {
-    "Id": "EBOF",
-    "DisplayName": "Excessively Belligerent Obliteration of Factions",
+	"Id": "EBOF",
+	"DisplayName": "Excessively Belligerent Obliteration of Factions",
 	"title": "Excessively Belligerent Obliteration of Factions",
 	"author": "explodoboy",
 	"description": "A kinda-simple mod that allows for the permanent killing off of factions. Assassinations not included.",
-    "Version": "1.0.0",
-    "ManagerVersion": "0.25.0",
-    "GameVersion": "0.4.67",
+	"Version": "1.0.0",
+	"ManagerVersion": "0.25.0",
+	"GameVersion": "0.4.67",
 	"AssemblyName": "EBOF.dll",
 	"EntryMethod": "EBOF.Main.Load"
 }
