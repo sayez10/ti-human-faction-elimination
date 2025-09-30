@@ -14,7 +14,7 @@ namespace TIFactionEliminationMod
     [HarmonyPatch(typeof(TIFactionState), nameof(TIFactionState.AddToCurrentResource))]
     internal static class InfluenceCap
     {
-        private static bool[] markedForDeath = new bool[18]; //base game has 10 built-in (including 'none') factions, plus an extra 8 for modders
+        private static bool[] _markedForDeath = new bool[18]; //base game has 10 built-in (including 'none') factions, plus an extra 8 for modders
 
         [HarmonyPostfix]
         private static void LimitInfluence(TIFactionState __instance)
@@ -33,22 +33,22 @@ namespace TIFactionEliminationMod
             // If the faction has been marked, then their influence is locked to 0 at all times, no matter what.
             int thisFaction = (int)factionIdeologyTemplate.ideology;
             var monthlyIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
-            if (markedForDeath[thisFaction])
+            if (_markedForDeath[thisFaction])
             {
                 // If a faction manages to generate 100 influence a month, their mark is cleared, and the faction can start storing influence again.
                 // This represents sufficient traction, whether on earth or in space, causing the recreation of a previously-defunct faction.
                 // Also, if monthlyInfluenceToClearMark is zero, the check is skipped; factions remain dead.
-                if (Main.settings.monthlyInfluenceToClearMark != 0 && monthlyIncome > Main.settings.monthlyInfluenceToClearMark) { markedForDeath[thisFaction] = false; return; }
+                if (Main.settings.monthlyInfluenceToClearMark != 0 && monthlyIncome > Main.settings.monthlyInfluenceToClearMark) { _markedForDeath[thisFaction] = false; return; }
 
                 __instance.resources[FactionResource.Influence] = 0;
-                return; // No need to waste time on re-checking markedForDeath below, or setting the cap.
+                return; // No need to waste time on re-checking _markedForDeath below, or setting the cap.
             }
 
             // If the faction has no councilors, and have zero influence with an active defecit, they are marked for death.
             // First checks if the faction is already marked. If so, checking again is totally unnecessary.
-            if (!markedForDeath[thisFaction] && __instance.resources[FactionResource.Influence] <= 0 && __instance.numActiveCouncilors == 0 && monthlyIncome < 0)
+            if (!_markedForDeath[thisFaction] && __instance.resources[FactionResource.Influence] <= 0 && __instance.numActiveCouncilors == 0 && monthlyIncome < 0)
             {
-                markedForDeath[thisFaction] = true;
+                _markedForDeath[thisFaction] = true;
                 __instance.resources[FactionResource.Influence] = 0;
 
                 return; // No need to proceed to enforcing the cap. Influence is definitely under the cap, now.
@@ -66,9 +66,9 @@ namespace TIFactionEliminationMod
         // When called, every mark is cleared. This is to prevent marks carrying over between completely different saves.
         internal static void Reset()
         {
-            for (int i = 0; i < markedForDeath.Length; i++)
+            for (int i = 0; i < _markedForDeath.Length; i++)
             {
-                markedForDeath[i] = false;
+                _markedForDeath[i] = false;
             }
         }
     }
