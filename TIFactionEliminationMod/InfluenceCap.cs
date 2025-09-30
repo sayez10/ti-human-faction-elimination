@@ -14,7 +14,8 @@ namespace TIFactionEliminationMod
     [HarmonyPatch(typeof(TIFactionState), nameof(TIFactionState.AddToCurrentResource))]
     internal static class InfluenceCap
     {
-        private static bool[] _markedForDeath = new bool[18]; //base game has 10 built-in (including 'none') factions, plus an extra 8 for modders
+        // Vanilla game has 10 built-in (including 'none') factions, plus an extra 8 for modders
+        private static readonly bool[] _markedForDeath = new bool[18];
 
         [HarmonyPostfix]
         private static void LimitInfluence(TIFactionState __instance)
