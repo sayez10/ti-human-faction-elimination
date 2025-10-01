@@ -46,10 +46,11 @@ namespace TIFactionEliminationMod
                 return;
             }
 
+            float currentInfluence = __instance.GetCurrentResourceAmount(FactionResource.Influence);
             float monthlyInfluenceIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
 
             // If the faction has no councilors, zero influence, and an active defecit, it's marked as dead
-            if (__instance.resources[FactionResource.Influence] <= 0f && __instance.numActiveCouncilors == 0 && monthlyInfluenceIncome < 0f)
+            if (currentInfluence <= 0f && __instance.numActiveCouncilors == 0 && monthlyInfluenceIncome < 0f)
             {
                 _markedAsDead[thisFaction] = true;
                 __instance.resources[FactionResource.Influence] = DEAD_FACTION_INFLUENCE;
@@ -60,7 +61,6 @@ namespace TIFactionEliminationMod
 
             // If the faction isn't marked as dead, then the influence cap is enforced as usual
             // Also, if influenceCap is zero, the check is skipped completely
-            float currentInfluence = __instance.GetCurrentResourceAmount(FactionResource.Influence);
             if (Main.settings.influenceCap != 0f && currentInfluence > Main.settings.influenceCap)
             {
                 __instance.resources[FactionResource.Influence] = Main.settings.influenceCap;
