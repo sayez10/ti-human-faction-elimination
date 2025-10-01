@@ -25,10 +25,15 @@ namespace TIFactionEliminationMod
         /// </summary>
         /// <param name="TIFactionState"></param>
         [HarmonyPostfix]
-        private static void AddToCurrentResourcePostfix(TIFactionState __instance)
+        private static void AddToCurrentResourcePostfix(TIFactionState __instance, FactionResource resourceType)
         {
             // If mod has been disabled, abort patch
             if (!Main.enabled) { return; }
+
+            // Return early if the added resource type isn't influence:
+            // No need to reset it to 0 afterwards
+            // And we can still check if the conditions for _markedAsDead are met after the next influence change
+            if (resourceType != FactionResource.Influence) { return; }
 
             // Game might not be fully initialized yet when the patched vanilla method is called the first time
             var factionIdeologyTemplate = __instance.ideology;
