@@ -6,6 +6,8 @@ using System;
 using HarmonyLib;
 using PavonisInteractive.TerraInvicta;
 
+using System.Runtime.CompilerServices;
+
 
 
 namespace TIFactionEliminationMod
@@ -56,7 +58,7 @@ namespace TIFactionEliminationMod
                 __instance.resources[FactionResource.Influence] = DEAD_FACTION_INFLUENCE;
 
                 // No need to proceed to enforcing the cap, influence is definitely under the cap
-                return; 
+                return;
             }
 
             // If the faction isn't marked as dead, then the influence cap is enforced as usual
@@ -74,6 +76,12 @@ namespace TIFactionEliminationMod
         internal static void Reset()
         {
             Array.Clear(_markedAsDead, 0, _markedAsDead.Length);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static bool IsFactionMarkedAsDead(FactionIdeology ideology)
+        {
+            return _markedAsDead[(int)ideology];
         }
     }
 
