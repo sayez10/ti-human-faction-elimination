@@ -32,7 +32,7 @@ namespace TIFactionEliminationMod
             var factionIdeologyTemplate = __instance.ideology;
             if (factionIdeologyTemplate == null) { return; }
 
-            // If the faction has been marked, then their influence is locked to 0 at all times
+            // If the faction has been marked, then their influence is locked below 0 at all times
             int thisFaction = (int)factionIdeologyTemplate.ideology;
 
             const float DEAD_FACTION_INFLUENCE = -1_000_000f;
@@ -49,7 +49,7 @@ namespace TIFactionEliminationMod
             float monthlyInfluenceIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
 
             // If the faction has no councilors, zero influence, and an active defecit, it's marked as dead
-            if (__instance.resources[FactionResource.Influence] <= 0 && __instance.numActiveCouncilors == 0 && monthlyInfluenceIncome < 0)
+            if (__instance.resources[FactionResource.Influence] <= 0f && __instance.numActiveCouncilors == 0 && monthlyInfluenceIncome < 0f)
             {
                 _markedAsDead[thisFaction] = true;
                 __instance.resources[FactionResource.Influence] = DEAD_FACTION_INFLUENCE;
@@ -61,7 +61,7 @@ namespace TIFactionEliminationMod
             // If the faction isn't marked as dead, then the influence cap is enforced as usual
             // Also, if influenceCap is zero, the check is skipped completely
             float currentInfluence = __instance.GetCurrentResourceAmount(FactionResource.Influence);
-            if (Main.settings.influenceCap != 0 && currentInfluence > Main.settings.influenceCap)
+            if (Main.settings.influenceCap != 0f && currentInfluence > Main.settings.influenceCap)
             {
                 __instance.resources[FactionResource.Influence] = Main.settings.influenceCap;
             }
