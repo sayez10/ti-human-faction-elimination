@@ -55,8 +55,8 @@ namespace TIFactionEliminationMod
 
             // If the faction isn't marked as dead, then the influence cap is enforced as usual
             // Also, if influenceCap is zero, the check is skipped completely
-            float influence = __instance.GetCurrentResourceAmount(FactionResource.Influence);
-            if (Main.settings.influenceCap != 0 && influence > Main.settings.influenceCap)
+            float currentInfluence = __instance.GetCurrentResourceAmount(FactionResource.Influence);
+            if (Main.settings.influenceCap != 0 && currentInfluence > Main.settings.influenceCap)
             {
                 __instance.resources[FactionResource.Influence] = Main.settings.influenceCap;
             }
