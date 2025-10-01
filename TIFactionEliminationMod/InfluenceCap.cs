@@ -23,14 +23,14 @@ namespace TIFactionEliminationMod
             // It makes sure a faction that has been cleared of both influence and councilors can never come back.
             // It also enforces a cap to influence storage so killing off a faction doesn't take literally forever.
 
-            // If mod has been disabled, abort patch.
+            // If mod has been disabled, abort patch
             if (!Main.enabled) { return; }
 
             // Game might not be fully initialized yet when the patched vanilla method is called the first time
             var factionIdeologyTemplate = __instance.ideology;
             if (factionIdeologyTemplate == null) { return; }
 
-            // If the faction has been marked, then their influence is locked to 0 at all times, no matter what.
+            // If the faction has been marked, then their influence is locked to 0 at all times
             int thisFaction = (int)factionIdeologyTemplate.ideology;
             float monthlyInfluenceIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
 
@@ -38,21 +38,23 @@ namespace TIFactionEliminationMod
             if (_markedAsDead[thisFaction])
             {
                 __instance.resources[FactionResource.Influence] = 0;
-                return; // No need to waste time on re-checking _markedAsDead below, or setting the cap.
+
+                // No need to waste time on re-checking _markedAsDead below, or setting the cap
+                return;
             }
 
-            // If the faction has no councilors, and have zero influence with an active defecit, they are marked for death.
-            // First checks if the faction is already marked. If so, checking again is totally unnecessary.
+            // If the faction has no councilors, zero influence, and an active defecit, it's marked as dead
             if (__instance.resources[FactionResource.Influence] <= 0 && __instance.numActiveCouncilors == 0 && monthlyInfluenceIncome < 0)
             {
                 _markedAsDead[thisFaction] = true;
                 __instance.resources[FactionResource.Influence] = 0;
 
-                return; // No need to proceed to enforcing the cap. Influence is definitely under the cap, now.
+                // No need to proceed to enforcing the cap, influence is definitely under the cap
+                return; 
             }
 
-            // If the faction isn't marked for death, then the influence cap is enforced as usual.
-            // Also, if influenceCap is zero, the check is skipped completely; there is no cap.
+            // If the faction isn't marked as dead, then the influence cap is enforced as usual
+            // Also, if influenceCap is zero, the check is skipped completely
             float influence = __instance.GetCurrentResourceAmount(FactionResource.Influence);
             if (Main.settings.influenceCap != 0 && influence > Main.settings.influenceCap)
             {
@@ -78,7 +80,7 @@ namespace TIFactionEliminationMod
         [HarmonyPostfix]
         private static void CompleteInitPostfix()
         {
-            // If mod has been disabled, abort reset
+            // If mod has been disabled, abort patch
             if (!Main.enabled) { return; }
 
             MarkFactionAsDead.Reset();
