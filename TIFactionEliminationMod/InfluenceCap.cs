@@ -34,7 +34,6 @@ namespace TIFactionEliminationMod
 
             // If the faction has been marked, then their influence is locked to 0 at all times
             int thisFaction = (int)factionIdeologyTemplate.ideology;
-            float monthlyInfluenceIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
 
             // We check this first to simplify conditions below
             if (_markedAsDead[thisFaction])
@@ -44,6 +43,8 @@ namespace TIFactionEliminationMod
                 // No need to waste time on re-checking _markedAsDead below, or setting the cap
                 return;
             }
+
+            float monthlyInfluenceIncome = __instance.GetMonthlyIncome(FactionResource.Influence);
 
             // If the faction has no councilors, zero influence, and an active defecit, it's marked as dead
             if (__instance.resources[FactionResource.Influence] <= 0 && __instance.numActiveCouncilors == 0 && monthlyInfluenceIncome < 0)
