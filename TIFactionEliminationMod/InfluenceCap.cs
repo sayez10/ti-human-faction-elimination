@@ -16,13 +16,15 @@ namespace TIFactionEliminationMod
         // Vanilla game has 10 built-in (including 'none') factions, plus an extra 8 for modders
         private static readonly bool[] _markedAsDead = new bool[18];
 
+        /// <summary>
+        /// This function jumps in AFTER a resource has been added to a faction's coffers
+        /// It makes sure a faction that has been cleared of both influence and councilors can never come back
+        /// It also enforces a cap to influence storage so killing off a faction doesn't take literally forever
+        /// </summary>
+        /// <param name="TIFactionState"></param>
         [HarmonyPostfix]
         private static void AddToCurrentResourcePostfix(TIFactionState __instance)
         {
-            // This function jumps in AFTER a resource has been added to a faction's coffers.
-            // It makes sure a faction that has been cleared of both influence and councilors can never come back.
-            // It also enforces a cap to influence storage so killing off a faction doesn't take literally forever.
-
             // If mod has been disabled, abort patch
             if (!Main.enabled) { return; }
 
@@ -62,7 +64,10 @@ namespace TIFactionEliminationMod
             }
         }
 
-        // When called, every mark is cleared. This is to prevent marks carrying over between completely different saves.
+        /// <summary>
+        /// When called, every mark is cleared
+        /// This is to prevent marks carrying over between completely different saves
+        /// </summary>
         internal static void Reset()
         {
             for (int i = 0; i < _markedAsDead.Length; i++)
@@ -72,11 +77,16 @@ namespace TIFactionEliminationMod
         }
     }
 
-    // This latches onto (what I think is) the last function in charge of loading a save. All I know for sure, is that it runs only once during a game load.
-    // Basically, when a save is loaded for the first time in a session, it's populated with 'false' values.
+
+
     [HarmonyPatch(typeof(GameControl), nameof(GameControl.CompleteInit))]
     internal static class ResetFactionsStatus
     {
+        /// <summary>
+        /// Latches onto (what I think is) the last function in charge of loading a save
+        /// All I know for sure, is that it runs only once during a game load
+        /// When a save is loaded for the first time in a session, it's populated with 'false' values
+        /// </summary>
         [HarmonyPostfix]
         private static void CompleteInitPostfix()
         {
