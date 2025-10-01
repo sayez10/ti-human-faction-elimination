@@ -34,15 +34,13 @@ namespace TIFactionEliminationMod
             var factionIdeologyTemplate = __instance.ideology;
             if (factionIdeologyTemplate == null) { return; }
 
-            // If the faction has been marked, then their influence is locked below 0 at all times
+            // If the faction has been marked, then their influence is locked at 0 at all times
             int thisFaction = (int)factionIdeologyTemplate.ideology;
-
-            const float DEAD_FACTION_INFLUENCE = -1_000_000f;
 
             // We check this first to simplify conditions below
             if (_markedAsDead[thisFaction])
             {
-                __instance.resources[FactionResource.Influence] = DEAD_FACTION_INFLUENCE;
+                __instance.resources[FactionResource.Influence] = 0f;
 
                 // No need to waste time on re-checking _markedAsDead below, or setting the cap
                 return;
@@ -55,7 +53,7 @@ namespace TIFactionEliminationMod
             if (currentInfluence <= 0f && __instance.numActiveCouncilors == 0 && monthlyInfluenceIncome < 0f)
             {
                 _markedAsDead[thisFaction] = true;
-                __instance.resources[FactionResource.Influence] = DEAD_FACTION_INFLUENCE;
+                __instance.resources[FactionResource.Influence] = 0f;
 
                 // No need to proceed to enforcing the cap, influence is definitely under the cap
                 return;
