@@ -73,10 +73,7 @@ namespace TIFactionEliminationMod
         /// </summary>
         internal static void Reset()
         {
-            for (int i = 0; i < _markedAsDead.Length; i++)
-            {
-                _markedAsDead[i] = false;
-            }
+            Array.Clear(_markedAsDead, 0, _markedAsDead.Length);
         }
     }
 
