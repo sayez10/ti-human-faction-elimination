@@ -39,7 +39,7 @@
 					{
 						"weight": 1,
 						"effectTemplateNames": [
-							"Effect_Faction_DecreaseMonthlyInfluenceIncome80"
+							"Effect_Faction_DecreaseMonthlyInfluenceIncome100"
 						]
 					}
 				]
@@ -86,7 +86,7 @@
 					{
 						"weight": 1,
 						"effectTemplateNames": [
-							"Effect_Faction_DecreaseMonthlyInfluenceIncome80"
+							"Effect_Faction_DecreaseMonthlyInfluenceIncome100"
 						]
 					}
 				]
@@ -133,7 +133,7 @@
 					{
 						"weight": 1,
 						"effectTemplateNames": [
-							"Effect_Faction_DecreaseMonthlyInfluenceIncome80"
+							"Effect_Faction_DecreaseMonthlyInfluenceIncome100"
 						]
 					}
 				]

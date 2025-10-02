@@ -1,8 +1,8 @@
 [
 	{
-		"dataName": "Effect_Faction_DecreaseMonthlyInfluenceIncome80",
+		"dataName": "Effect_Faction_DecreaseMonthlyInfluenceIncome100",
 		"instantEffect": "GainInfluenceIncome",
-		"value": -80,
+		"value": -100,
 		"effectTarget": "SourceFaction",
 		"effectDuration": "instant",
 		"duration_months": -1
