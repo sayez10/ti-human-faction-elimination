@@ -11,7 +11,7 @@ using static UnityModManagerNet.UnityModManager;
 
 
 
-namespace TIFactionEliminationMod
+namespace TIHumanFactionEliminationMod
 {
     /// <summary>
     /// Controls loading and managing the mod

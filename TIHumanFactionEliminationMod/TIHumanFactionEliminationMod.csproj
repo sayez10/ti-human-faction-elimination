@@ -7,8 +7,8 @@
     <ProjectGuid>{91B7A999-8E9D-416F-949F-73AE3484F56B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TIFactionEliminationMod</RootNamespace>
-    <AssemblyName>TIFactionEliminationMod</AssemblyName>
+    <RootNamespace>TIHumanFactionEliminationMod</RootNamespace>
+    <AssemblyName>TIHumanFactionEliminationMod</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

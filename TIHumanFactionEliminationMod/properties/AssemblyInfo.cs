@@ -10,11 +10,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Human Faction Elimination")]
-[assembly: AssemblyDescription("Allow the permanent elimination of human factions in Terra Invicta")]
+[assembly: AssemblyTitle("Human Faction Elimination Mod")]
+[assembly: AssemblyDescription("A simple mod which allows for the permanent elimination of human factions in Terra Invicta.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("https://github.com/sayez10/ti-human-faction-elimination")]
-[assembly: AssemblyProduct("TIFactionEliminationMod")]
+[assembly: AssemblyProduct("TIHumanFactionEliminationMod")]
 [assembly: AssemblyCopyright("Copyright © 2025 sayez10")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

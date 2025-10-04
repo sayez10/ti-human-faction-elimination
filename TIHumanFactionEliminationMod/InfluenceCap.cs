@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 
 
 
-namespace TIFactionEliminationMod
+namespace TIHumanFactionEliminationMod
 {
     [HarmonyPatch(typeof(TIFactionState), nameof(TIFactionState.AddToCurrentResource))]
     internal static class MarkFactionAsDead
