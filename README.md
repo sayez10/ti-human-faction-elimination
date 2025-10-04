@@ -1,4 +1,4 @@
-A mod for Terra Invicta which allows for factions to become permanently unable to recruit councilors, by choking them out of influence.
+A simple mod which allows for the permanent elimination of human factions in Terra Invicta, by choking them out of influence.
 
 It requires Unity Mod Manager to work (install using DoorstopProxy): https://www.nexusmods.com/site/mods/21
 
