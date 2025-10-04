@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Human Faction Elimination Mod")]
-[assembly: AssemblyDescription("A simple mod which allows for the permanent elimination of human factions in Terra Invicta.")]
+[assembly: AssemblyDescription("A simple mod which allows for the permanent elimination of human factions in Terra Invicta, by choking them out of influence.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("https://github.com/sayez10/ti-human-faction-elimination-mod")]
 [assembly: AssemblyProduct("TIHumanFactionEliminationMod")]
