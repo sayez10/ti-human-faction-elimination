@@ -97,8 +97,6 @@
     <None Include="package\TINarrativeEventTemplate.json" />
     <None Include="package\TIEffectTemplate.en" />
     <None Include="package\TINarrativeEventTemplate.en" />
-    <None Include="package\FactionEliminationMod.pdn" />
-    <None Include="package\FactionEliminationMod.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
