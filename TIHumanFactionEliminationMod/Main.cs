@@ -20,7 +20,6 @@ namespace TIHumanFactionEliminationMod
     {
         public static bool enabled;
         public static ModEntry mod;
-        public static Settings settings;
 
         /// <summary>
         /// Entry point of the application (as per ModInfo.json), which applies the Harmony patches
@@ -30,12 +29,9 @@ namespace TIHumanFactionEliminationMod
         static bool Load(ModEntry modEntry)
         {
             var harmony = new Harmony(modEntry.Info.Id);
-            settings = ModSettings.Load<Settings>(modEntry);
             mod = modEntry;
             harmony.PatchAll(Assembly.GetExecutingAssembly());
             modEntry.OnToggle = OnToggle;
-            modEntry.OnGUI = OnGUI;
-            modEntry.OnSaveGUI = OnSaveGUI;
             return true;
         }
 
@@ -49,28 +45,6 @@ namespace TIHumanFactionEliminationMod
         {
             enabled = value;
             return true;
-        }
-
-        static void OnGUI(ModEntry modEntry)
-        {
-            settings.Draw(modEntry);
-        }
-
-        static void OnSaveGUI(ModEntry modEntry)
-        {
-            settings.Save(modEntry);
-        }
-
-        public class Settings : ModSettings, IDrawable
-        {
-            [Draw("Maximum storable influence: (default: 0, set 0 to disable)", Min = 0, Precision = 0)] public float influenceCap = 0f;
-
-            public override void Save(ModEntry modEntry)
-            {
-                Save(this, modEntry);
-            }
-
-            public void OnChange() { }
         }
     }
 }
