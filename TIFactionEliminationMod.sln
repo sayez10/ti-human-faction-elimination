@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{4563A1C6-7E27-4C89-9183-3F851C782A9D}") = "TIFactionEliminationMod", "TIFactionEliminationMod\TIFactionEliminationMod.csproj", "{91B7A999-8E9D-416F-949F-73AE3484F56B}"
 EndProject
-Project("{18A70B69-3EF8-4B3D-8F14-66A920536FFD}") = "Solution Items", "Solution Items", "{3D092073-881A-496E-9A81-ECAC334BC1D5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEA1415D-A208-439F-9A0B-EE07CA3A9B3A}"
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
