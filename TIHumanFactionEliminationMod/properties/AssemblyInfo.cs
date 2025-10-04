@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Human Faction Elimination Mod")]
 [assembly: AssemblyDescription("A simple mod which allows for the permanent elimination of human factions in Terra Invicta.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("https://github.com/sayez10/ti-human-faction-elimination")]
+[assembly: AssemblyCompany("https://github.com/sayez10/ti-human-faction-elimination-mod")]
 [assembly: AssemblyProduct("TIHumanFactionEliminationMod")]
 [assembly: AssemblyCopyright("Copyright © 2025 sayez10")]
 [assembly: AssemblyTrademark("")]
