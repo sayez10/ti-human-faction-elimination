@@ -87,9 +87,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MarkFactionAsDead.cs" />
     <Compile Include="Main.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="patches\MarkFactionAsDead.cs" />
+    <Compile Include="properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="package\ModInfo.json" />
